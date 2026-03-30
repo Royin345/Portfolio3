@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ian Green</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Scanlines (synthwave) -->
+  <div id="scanlines"></div>
+
+  <!-- Glass orbs -->
+  <div class="glass-orb orb1"></div>
+  <div class="glass-orb orb2"></div>
+  <div class="glass-orb orb3"></div>
+
+  <!-- ===================================================
+       THEME SELECTOR
+  ==================================================== -->
+  <div id="selector">
+    <div>
+      <h1>Welcome. Choose your <em>experience.</em></h1>
+    </div>
+
+    <div class="sel-cards">
+
+      <!-- Clarity -->
+      <div class="sel-card sel-clarity" onclick="pickTheme('clarity')">
+        <div class="cprev">
+          <div class="b a"></div>
+          <div class="b"></div>
+          <div class="b s"></div>
+          <div class="b"></div>
+        </div>
+        <div class="sn">Clarity</div>
+        <div class="sd">Clean, minimal, distraction-free. Light &amp; dark modes available.</div>
+        <div><span class="sb">✦ Default</span></div>
+      </div>
+
+      <!-- Synthwave -->
+      <div class="sel-card sel-synthwave" onclick="pickTheme('synthwave')">
+        <div class="swprev">
+          <div class="swt">IAN GREEN</div>
+        </div>
+        <div class="sn">SYNTHWAVE</div>
+        <div class="sd">Retro-futuristic neon. Glow effects, grid horizons, cyber vibes.</div>
+        <div><span class="sb">▸ NEON</span></div>
+      </div>
+
+      <!-- Glassmorphism -->
+      <div class="sel-glass-wrap">
+        <div class="sel-glass" onclick="pickTheme('glass')">
+          <div class="gprev">
+            <div class="b a"></div>
+            <div class="b"></div>
+            <div class="b s"></div>
+          </div>
+          <div class="sn">Glassmorphism</div>
+          <div class="sd">Frosted glass cards on a vivid gradient. Depth through translucency.</div>
+          <div><span class="sb">◈ Glass</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================
+       MAIN SITE
+  ==================================================== -->
+  <div id="site">
+
+    <!-- NAV -->
+    <nav id="nav">
+      <a href="#home" class="nav-logo">Ian Green</a>
+      <ul class="nav-center">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#djlife">DJ Life</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="ibtn" id="mode-btn" onclick="toggleMode()">☀️ Light</button>
+        <div class="theme-dd-wrap">
+          <button class="ibtn" id="theme-dd-btn" onclick="toggleDropdown(event)">
+            🎨 Theme <span class="arr">▾</span>
+          </button>
+          <div id="theme-dd">
+            <button class="dd-item" id="dd-clarity"   onclick="ddPick('clarity')">
+              <span class="dot dot-clarity"></span> Clarity
+            </button>
+            <button class="dd-item" id="dd-synthwave" onclick="ddPick('synthwave')">
+              <span class="dot dot-synthwave"></span> Synthwave
+            </button>
+            <button class="dd-item" id="dd-glass"     onclick="ddPick('glass')">
+              <span class="dot dot-glass"></span> Glassmorphism
+            </button>
+            <div class="dd-divider"></div>
+            <button class="dd-item dd-selector" onclick="showSelector()">
+              ↩ Theme Selection Screen
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section id="home" style="border-top:none;">
+        <div class="hero-tag">Atlanta, GA · Born October 31, 1991</div>
+        <h1 class="hero-name">Ian Green</h1>
+        <p class="hero-sub">Coach · DJ · Gamer · Builder</p>
+        <div class="hero-line"></div>
+        <p class="hero-bio">Head Coach at Atlanta Contact Point, where I've spent years running the <strong>PlayDay</strong> program — a community built around inclusive, competitive fun. At night I'm <strong>DJYou</strong>, pushing Happy Hardcore through Atlanta's underground rave scene since 2009, and directing MomoCon's Rave for five years. When I'm not on the field or behind the decks, I'm gaming, building PCs, or working the neighborhood in Virginia Highlands.</p>
+        <div class="hero-chips">
+          <span class="hero-chip"><span class="chip-icon">📍</span> Virginia Highlands, Atlanta GA</span>
+          <span class="hero-chip"><span class="chip-icon">🏅</span> Head Coach · PlayDay</span>
+          <span class="hero-chip"><span class="chip-icon">🎧</span> DJYou · Happy Hardcore · 2009–</span>
+          <span class="hero-chip"><span class="chip-icon">🖥️</span> PC Builder</span>
+          <span class="hero-chip"><span class="chip-icon">🎮</span> Gamer</span>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work">
+        <div class="sec-label">Career</div>
+        <h2 class="sec-title">Work</h2>
+        <div class="grid-3">
+
+          <div class="card">
+            <div class="wc-name">Atlanta Contact Point</div>
+            <div class="wc-role">Head Coach</div>
+            <div class="wc-loc">📍 Atlanta, GA</div>
+            <div class="wc-desc">Serving as Head Coach for many years, running the flagship program <strong>PlayDay</strong> — a community-focused athletic and social program built around inclusive, joyful play.</div>
+            <span class="badge">Long-Term · Full-Time</span>
+          </div>
+
+          <div class="card">
+            <div class="wc-name">Sweet Auburn Barbecue</div>
+            <div class="wc-role">Host</div>
+            <div class="wc-loc">📍 Virginia Highlands, Atlanta GA</div>
+            <div class="wc-desc">Occasional host at one of Atlanta's most beloved barbecue spots nestled in the heart of Virginia Highlands.</div>
+            <span class="badge">Occasional</span>
+          </div>
+
+          <div class="card">
+            <div class="wc-name">Intown Ace Hardware</div>
+            <div class="wc-role">Seasonal Staff</div>
+            <div class="wc-loc">📍 Virginia Highlands, Atlanta GA</div>
+            <div class="wc-desc">Works the busy spring season, helping the local neighborhood community tackle their projects and everyday hardware needs.</div>
+            <span class="badge">Spring Season</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DJ LIFE -->
+      <section id="djlife">
+        <div class="sec-label">Music &amp; Culture</div>
+        <h2 class="sec-title">DJ Life</h2>
+
+        <div class="card dj-card">
+          <div class="dj-nm">DJYou</div>
+          <div class="dj-genre">Happy Hardcore · Underground Rave Scene · Since 2009</div>
+          <div class="dj-intro-txt">A DJ identity forged from passion, persistence, and a deep love for the underground. DJYou has been a cornerstone of Atlanta's rave community and the driving force behind Happy Hardcore's presence throughout the 2010s.</div>
+        </div>
+
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-date">2009</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>The Beginning</h3>
+              <p>Found an interest in DJing and fell in love with Happy Hardcore — a genre defined by speed, energy, and unapologetic joy.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">Mar 2010</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>MomoCon — The Spark</h3>
+              <p>Attended MomoCon armed with very loud computer speakers — much to everyone's surprise — and started an impromptu dance that would become the original precursor to MomoCon's Rave.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">Sep 2010</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>Into the Underground</h3>
+              <p>After high school, entered the underground rave scene shortly after returning from a first rave in Toronto. Began relentlessly pushing the Happy Hardcore genre throughout the underground Atlanta community.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">Mar 2011</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>MomoCon — Bigger &amp; Louder</h3>
+              <p>Attempted another impromptu dance at MomoCon with much bigger and louder speakers — until the con chair came down personally to shut it down.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">Mar 2012</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>MomoCon — Officially In Charge</h3>
+              <p>MomoCon officially put DJYou in charge of the rave. What started as a rogue disruption became a recognized, curated event.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">2012–2017</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>Director of MomoCon's Rave</h3>
+              <p>Served as Director of MomoCon's Rave for five years, shaping it into a hallmark event of the convention. Throughout this entire era, Happy Hardcore was pushed relentlessly through the underground scene.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">2017+</div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h3>Closing Out the Rave</h3>
+              <p>Stepped down from the Director role to focus solely on what matters most — closing out the rave every year. Ending the night is the honor.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- INTERESTS -->
+      <section id="interests">
+        <div class="sec-label">Passions</div>
+        <h2 class="sec-title">Interests</h2>
+
+        <div class="grid-3">
+
+          <!-- Crystal -->
+          <div class="card">
+            <div class="int-title">🖥️ PC Builder</div>
+            <div class="pc-head">💎 Crystal <span class="wip-pill">First Build</span></div>
+            <table class="spec-t">
+              <tr><td>Case</td><td>Corsair Crystal 680X (White)</td></tr>
+              <tr><td>Motherboard</td><td>ASUS Maximus X Hero</td></tr>
+              <tr><td>CPU</td><td>Intel i9-9900K</td></tr>
+              <tr><td>RAM</td><td>Corsair Vengeance DDR4 32GB (8×4)</td></tr>
+              <tr><td>GPU</td><td>NVIDIA RTX 2070</td></tr>
+              <tr><td>PSU</td><td>Corsair 850W Gold</td></tr>
+            </table>
+          </div>
+
+          <!-- Aether -->
+          <div class="card">
+            <div class="int-title">✨ PC Builder</div>
+            <div class="pc-head">☁️ Aether <span class="wip-pill">Work in Progress</span></div>
+            <table class="spec-t">
+              <tr><td>Case</td><td>Corsair Air 5400 (White)</td></tr>
+              <tr><td>Motherboard</td><td>ROG Strix X870E-E</td></tr>
+              <tr><td>CPU</td><td>Ryzen 9 9950X3D</td></tr>
+              <tr><td>RAM</td><td>Corsair Vengeance RGB 64GB 6000MT/s CL30 (White)</td></tr>
+              <tr><td>GPU</td><td>Sapphire Radeon RX 7900 XTX</td></tr>
+              <tr><td>PSU</td><td>Corsair HXi 1200W</td></tr>
+            </table>
+          </div>
+
+          <!-- Gamer -->
+          <div class="card">
+            <div class="int-title">🎮 Gamer</div>
+            <p style="font-size:.875rem;color:var(--txt2);line-height:1.65;">Gaming is a core part of the lifestyle — from competitive sessions to late-night runs, it's a constant thread throughout.</p>
+          </div>
+
+          <!-- Athleticism -->
+          <div class="card">
+            <div class="int-title">🏃 Athleticism</div>
+            <div class="tags">
+              <span class="tag">DDR</span>
+              <span class="tag">PlayDay</span>
+              <span class="tag">Exercise</span>
+            </div>
+            <p style="font-size:.86rem;color:var(--txt2);line-height:1.65;">Active across multiple disciplines — from Dance Dance Revolution to the community-driven world of PlayDay and regular exercise.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="sec-label">The Full Picture</div>
+        <h2 class="sec-title">About</h2>
+
+        <div class="about-block">
+          <p><strong>Ian Green</strong> is a coach, DJ, gamer, and community builder based in <strong>Atlanta, GA</strong>. Born October 31st, 1991, he has spent his life turning the things he loves into things that matter to the people around him.</p>
+          <p>As <strong>Head Coach at Atlanta Contact Point</strong>, Ian has led the <strong>PlayDay</strong> program for many years — a community athletic experience centered on inclusive, joyful play. He also occasionally hosts at <strong>Sweet Auburn Barbecue</strong> in Virginia Highlands, and works the spring season at <strong>Intown Ace Hardware</strong>, staying rooted in the neighborhood he calls home.</p>
+          <p>Under the name <strong>DJYou</strong>, Ian has been a fixture of Atlanta's underground rave scene since 2009 — championing Happy Hardcore throughout his twenties. What started as a rogue set of loud speakers at MomoCon 2010 grew into five years as Director of MomoCon's Rave (2012–2017). Today, he focuses on what he loves most: closing out the rave each year.</p>
+          <p>Off the decks and off the field, Ian is a dedicated gamer and PC enthusiast. His first build, <strong>Crystal</strong>, runs an i9-9900K and RTX 2070. His second build, <strong>Aether</strong>, is a high-end work in progress — a powerhouse featuring the Ryzen 9 9950X3D and RX 7900 XTX. He stays active through DDR, PlayDay, and regular exercise.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Ian Green &nbsp;·&nbsp; Atlanta, GA &nbsp;·&nbsp; Built with intention.</p>
+    </footer>
+
+  </div><!-- /site -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
