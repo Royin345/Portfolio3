@@ -108,11 +108,11 @@ html.synthwave body::before {
   content: '';
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: 55vh;
+  height: 38vh;
   background:
-    linear-gradient(transparent, rgba(177,74,237,.12)),
-    repeating-linear-gradient(0deg,   transparent, transparent 39px, rgba(177,74,237,.18) 39px, rgba(177,74,237,.18) 40px),
-    repeating-linear-gradient(90deg,  transparent, transparent 39px, rgba(177,74,237,.18) 39px, rgba(177,74,237,.18) 40px);
+    linear-gradient(transparent 0%, rgba(177,74,237,.04) 50%, rgba(177,74,237,.10) 100%),
+    repeating-linear-gradient(0deg,   transparent, transparent 39px, rgba(177,74,237,.07) 39px, rgba(177,74,237,.07) 40px),
+    repeating-linear-gradient(90deg,  transparent, transparent 39px, rgba(177,74,237,.07) 39px, rgba(177,74,237,.07) 40px);
   transform: perspective(500px) rotateX(28deg);
   transform-origin: bottom center;
   pointer-events: none;
