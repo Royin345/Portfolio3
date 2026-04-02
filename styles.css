@@ -437,16 +437,6 @@ html.synthwave .hero-name {
   letter-spacing: .01em;
 }
 
-.hero-line {
-  width: 56px; height: 3px;
-  background: var(--acc);
-  border-radius: 2px;
-}
-html.synthwave .hero-line {
-  background: linear-gradient(90deg, #ff2d78, #00f5ff);
-  box-shadow: 0 0 12px rgba(255,45,120,.6);
-  height: 2px;
-}
 
 .hero-bio {
   font-size: .975rem;
