@@ -236,6 +236,12 @@ html.glass .glass-orb { display: block; }
 .cprev .b.a { background:#2dd4bf; width:58%; }
 .cprev .b.s { width:38%; }
 
+@media (prefers-color-scheme: light) {
+  .cprev { background:#e6ece8; border-color:rgba(0,0,0,.08); }
+  .cprev .b { background:rgba(0,0,0,.08); }
+  .cprev .b.a { background:#0d9488; }
+}
+
 /* Synthwave selector card */
 .sel-synthwave {
   background: #0a0018;
@@ -377,6 +383,8 @@ html.glass .ibtn { backdrop-filter: blur(8px); }
 
 #mode-btn { display: none; }
 html.clarity #mode-btn { display: inline-block; }
+
+#dd-mode-divider, #dd-mode-btn { display: none; }
 
 /* =====================================================
    MAIN LAYOUT
@@ -867,9 +875,15 @@ html.synthwave ::-webkit-scrollbar-thumb { background: linear-gradient(#ff2d78, 
   .timeline::before { left: 58px; }
   .tl-date { width: 46px; font-size: .68rem; }
   .tl-dot { left: 52px; }
+
 }
 
 @media (max-width: 500px) {
   .nav-center a { padding: .4rem .45rem; font-size: .75rem; }
   html.synthwave .nav-center a { font-size: .55rem; letter-spacing: .04em; }
+
+  /* Move light/dark toggle into dropdown on small mobile */
+  html.clarity #mode-btn { display: none; }
+  html.clarity #dd-mode-btn { display: flex; }
+  html.clarity #dd-mode-divider { display: block; }
 }

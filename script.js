@@ -1,8 +1,9 @@
 const T_KEY = 'ig-theme';
 const M_KEY = 'ig-mode';
+const S_KEY = 'ig-scroll';
 
 let theme = localStorage.getItem(T_KEY);
-let mode  = localStorage.getItem(M_KEY) || 'dark';
+let mode  = localStorage.getItem(M_KEY) || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 
 /* ---------- apply theme to <html> ---------- */
 function applyTheme(t) {
@@ -16,6 +17,8 @@ function applyTheme(t) {
     h.classList.add(mode);
     modeBtn.style.display = '';
     modeBtn.textContent = mode === 'dark' ? '☀️ Light' : '🌙 Dark';
+    const ddModeBtn = document.getElementById('dd-mode-btn');
+    if (ddModeBtn) ddModeBtn.textContent = mode === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
   } else {
     modeBtn.style.display = 'none';
   }
@@ -41,7 +44,7 @@ function ddPick(t) {
   theme = t;
   localStorage.setItem(T_KEY, t);
   applyTheme(t);
-  closeDropdown();
+  closeDropdown(); 
 }
 
 /* ---------- show selector screen ---------- */
@@ -80,10 +83,19 @@ if (theme) {
   applyTheme(theme);
   document.getElementById('selector').style.display = 'none';
   document.getElementById('site').classList.add('show');
+  const savedScroll = localStorage.getItem(S_KEY);
+  if (savedScroll) setTimeout(() => window.scrollTo(0, parseInt(savedScroll)), 0);
 } else {
   /* Default classes for the selector overlay itself */
   document.documentElement.classList.add('clarity', 'dark');
 }
+
+/* ---------- save scroll position ---------- */
+let scrollTimer;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => localStorage.setItem(S_KEY, window.scrollY), 200);
+});
 
 /* ---------- smooth scroll ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
