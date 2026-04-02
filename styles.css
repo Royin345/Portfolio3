@@ -658,6 +658,29 @@ html.synthwave .tl-body h3 { color: var(--acc); text-shadow: 0 0 8px rgba(255,45
 
 .tl-body p { font-size: .86rem; color: var(--txt2); line-height: 1.66; }
 
+/* DJ photo */
+.dj-photo-wrap {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--bdr);
+}
+.dj-photo {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+html.synthwave .dj-photo-wrap {
+  border-color: rgba(255,45,120,.3);
+  box-shadow: 0 0 24px rgba(255,45,120,.15);
+}
+html.glass .dj-photo-wrap {
+  border-color: rgba(150,210,255,.25);
+}
+
 /* DJ intro */
 .dj-card { margin-bottom: 2.25rem; }
 .dj-nm {
