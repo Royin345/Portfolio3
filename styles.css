@@ -878,7 +878,7 @@ html.synthwave ::-webkit-scrollbar-thumb { background: linear-gradient(#ff2d78, 
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .nav-center a { padding: .4rem .45rem; font-size: .75rem; }
   html.synthwave .nav-center a { font-size: .55rem; letter-spacing: .04em; }
 
