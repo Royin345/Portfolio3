@@ -95,6 +95,7 @@ body {
   min-height: 100vh;
   color: var(--txt);
   transition: background .4s, color .4s;
+  overflow-x: hidden;
 }
 
 /* Clarity body */
