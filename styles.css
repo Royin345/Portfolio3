@@ -317,6 +317,8 @@ html.glass .glass-orb { display: block; }
   -webkit-backdrop-filter: blur(14px);
 }
 
+.logo-short { display: none; }
+
 .nav-logo {
   font-weight: 700; font-size: 1.05rem;
   color: var(--txt); text-decoration: none;
@@ -900,4 +902,8 @@ html.synthwave ::-webkit-scrollbar-thumb { background: linear-gradient(#ff2d78, 
   html.clarity #mode-btn { display: none; }
   html.clarity #dd-mode-btn { display: flex; }
   html.clarity #dd-mode-divider { display: block; }
+
+  /* Shorten nav logo */
+  .logo-full { display: none; }
+  .logo-short { display: inline; }
 }
